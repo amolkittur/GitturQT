@@ -56,34 +56,28 @@ GitturQT is a desktop application built with Python and PyQt. It serves as a uni
 
 ### 5.1 Idea Input and PRD Generation(Phase 1)
 
-- **Audio Transcription:** Record meetings and convert audio to text transcripts.
-- **AI-Powered PRD Creation:** Use AI agents to generate detailed PRDs from transcripts and additional documents.
+- **Audio Transcription:** Record meetings and convert audio to text transcripts we will be using AssemblyAI to generate the text transcripts using our hakuna matata fastapi server.
+- **AI-Powered PRD Creation:** Use AI agents created by us to generate detailed PRDs from transcripts and additional documents.
 - **Custom Prompts:** Allow optional custom prompts to guide PRD generation.
-- **Fabric Pattern Recognition:** Implement fabric patterns to identify key elements in inputs.
-- **Timeline:** 2 days timeline for PRD creation.
-
-### 5.2 Manual Review System
-
+- **Fabric Pattern Recognition:** Implement fabric library to recognise the  patterns to identify key elements in inputs.
 - **PRD Review:** Developers can review generated PRDs, provide feedback, and request changes.
 - **PRD Verification:** Ensure PRDs meet project requirements and guidelines.
 
-### 5.3 Task Management(Phase 2)
+### 5.2 Task Management(Phase 2)
 
-- **Task Extraction:** AI agents extract tasks from PRDs, categorize by priority or phase if not done by the AI agent it will be categorized by the developer.
-- **Task Assignment:** Assign tasks to developers with estimated time frames and priorities.
-- **Priority Setting:** Set task priorities to manage workflow effectively.
+- **Task Extraction:** AI agents extract tasks from PRDs, categorize by priority or phase if not done by the AI agent it will be categorized by the developer in the QT app.
+- **Task Assignment:** Assign tasks to developers with estimated time frames and priorities(Manual review to check the time frame and priority).
+- **Priority Setting:** Set task priorities to manage workflow effectively(Manual review to check the priority).
 - **Manual Review:** Developers can review tasks, provide feedback, and request changes.
--  **Timeline:** 2 days timeline for task management.
 
-### 5.4 GitHub Integration(Phase 3)
+### 5.3 GitHub Integration(Phase 3)
 
 - **Issue Generation:** Convert selected tasks into GitHub issues with detailed descriptions, acceptance criteria, documentation links and details from the PRD.
-- **Automated Coding:** Utilize AI agents to write code based on GitHub issues.
+- **Automated Coding:** Utilize AI agents to write code based on GitHub issues(Need to discuss this more in detail).
 - **Manual Review** Developers can review code, provide feedback, and request changes.
 - **Deployment Automation:** Once code is approved, commit the changes to the repository.
--  **Timeline:** 2 days timeline for GitHub integration.
 
-### 5.5 User Interface
+### 5.4 User Interface
 
 - **Intuitive Design:** A clean, user-friendly interface built with PyQt.
 - **Customization Options:** Allow users to customize settings and preferences.
