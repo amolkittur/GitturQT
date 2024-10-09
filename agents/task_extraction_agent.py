@@ -1,6 +1,7 @@
 import openai
 import os
 from dotenv import load_dotenv
+import json
 
 load_dotenv()
 
@@ -16,26 +17,34 @@ class TaskExtractionAgent():
             prd_text (str): The PRD text.
 
         Returns:
-            str: The extracted tasks.
+            list: A list of tasks with their details.
         """
         prompt = f"""
-            Extract all tasks from the following PRD:
+        Please read the following Product Requirements Document (PRD) and extract all possible tasks.
+        Organize the tasks under their respective phases and categories as outlined in the PRD.
+        For each task, include any sub-tasks or specific implementation details mentioned.
+        Return the tasks in a structured JSON format with the following fields:
 
-            {prd_text}
+        - 'phase': The phase under which the task falls.
+        - 'task_title': The title of the task.
+        - 'task_description': A brief description of the task.
+        - 'subtasks': A list of subtasks, each with a 'title' and 'description'.
 
-            Please read the following Product Requirements Document (PRD) and extract all possible tasks.
-            Organize the tasks under their respective phases and categories as outlined in the PRD.
-            For each task, include any sub-tasks or specific implementation details mentioned.
-            Also note any additional notes or comments from the product manager like deadlines, dependencies, timeline, etc.
-            Return the tasks in a list format.
+        Ensure the JSON is properly formatted and can be parsed by Python's json.loads() method.
+
+        **Important**: Do not include any markdown formatting, code fences, or additional text. Only return the pure JSON.
+
+        PRD Content:
+        {prd_text}
         """
-        response = openai.chat.completions.create(
+        response = openai.chat.completions.create(  
             model=os.getenv('OPENAI_MODEL'),
             messages=[
-                {"role": "system", "content": "You are a helpful assistant for extracting detailed tasks from PRD Markdown files."},
+                {"role": "system", "content": "You are an assistant that extracts tasks from PRDs and returns them in structured JSON format."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.2,
             max_tokens=2000,
         )
-        return response.choices[0].message.content
+        tasks_json = response.choices[0].message.content.strip()
+        return tasks_json  # This should be a JSON string
