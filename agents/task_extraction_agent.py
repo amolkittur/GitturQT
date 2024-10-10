@@ -9,7 +9,7 @@ class TaskExtractionAgent():
     """
     Agent for extracting tasks from a PRD.
     """
-    def run(self, prd_text):
+    def task_extraction(self, prd_text):
         """
         Extract tasks from a PRD.
 

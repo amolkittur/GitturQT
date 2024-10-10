@@ -1,166 +1,154 @@
----
+1. **Goals and Overview**
 
-# Product Requirements Document (PRD) for GitturQT
+   1.1 **Project Purpose**
 
-**Date:** [Insert Date]  
-**Prepared by:** [Your Name]
+   GitturQT is all about making the developer's life easier—because, let’s face it, developers have enough to deal with already. By making Git the main action center for all code development activities, we're giving developers a single source of truth. The goal here is pretty simple: take an idea, put it into a Product Requirements Document (PRD), and then break it down, phase by phase, until it’s something even the most sleep-deprived dev can handle on a daily basis (Red bull Ad). 
+   
+   By the end of each day, the developer should add value to themselves; by the end of each week, add value to their colleagues; and by the end of each month, add value to the world.
 
-## Table of Contents
+   GitHub is the home for all these tasks, keeping everything neat, organized, and hopefully reducing the "Wait, what was I supposed to do again?" moments. So yes, we're taking chaos and trying to turn it into something at least resembling a streamlined process.
 
-1. [Introduction](#1-introduction)
-2. [Objectives and Goals](#2-objectives-and-goals)
-3. [Product Overview](#3-product-overview)
-4. [Target Audience](#4-target-audience)
-5. [Key Features and Functionality](#5-key-features-and-functionality)
-6. [Technical Requirements](#6-technical-requirements)
-7. [User Experience and Interface Design](#7-user-experience-and-interface-design)
-8. [Workflow and Processes](#8-workflow-and-processes)
-9. [Performance and Scalability](#9-performance-and-scalability)
-10. [Security and Compliance](#10-security-and-compliance)
-11. [Deployment and Maintenance](#11-deployment-and-maintenance)
-12. [Risks and Mitigation Strategies](#12-risks-and-mitigation-strategies)
-13. [Appendices](#13-appendices)
+2. **Methodology**
 
----
+   In today's fast-paced development environment, GitturQT aims to enhance productivity by integrating AI into the typical developer workflow while keeping developers in control at every stage. This Human-in-the-Loop (HIL) approach means that developers can harness the power of AI for routine and complex tasks, but always with the ability to intervene, adjust, and guide the process to align with conscious, value-driven development. Developer is supposed to review consciously at every step along this path else the product is going to be useless. Below, we outline the lifecycle phases and how HIL AI involvement can make each step more efficient and enjoyable.
 
-## 1. Introduction
+   2.1 **Lifecycle Phases and HIL AI Involvement**
 
-GitturQT is an innovative platform designed to streamline the developer workflow by automating the transition from ideas to deployment. By leveraging AI agents and integrating key development processes, GitturQT aims to become an indispensable tool for developers, reducing manual overhead and enhancing productivity.
+   2.1.1 **PRD Creation (Once a Month)**
 
-## 2. Objectives and Goals
+   - AI assists in generating the initial Product Requirements Document by providing template suggestions based on previous projects and industry standards.
 
-- **Simplify Developer Workflow:** Minimize the manual tasks developers face by automating processes from idea inception to deployment.
-- **End-to-End Integration:** Provide a seamless experience where developers can input ideas, and the system handles PRD creation, task extraction, issue generation, coding, and deployment.
-- **User-Centric Design:** Ensure that developers have control with review systems at each step, allowing for manual interventions when necessary.
-- **Leverage AI and Pattern Recognition:** Utilize advanced AI agents and fabric patterns to interpret inputs and generate accurate outputs.
+   - A good PRD, according to the note, needs three essential ingredients:
 
-## 3. Product Overview
+     1. **PRD Template**: A starting point for your PRD that includes all the necessary sections.
+     2. **Meeting Transcription**: The AI transcribes brainstorming sessions, so no idea is left behind. Who has time for typing up notes, anyway?
+     3. **Custom Prompt**: The AI uses a personalized prompt that understands your team's unique quirks and preferences (including a love for puns, if that’s your style).
 
-GitturQT is a desktop application built with Python and PyQt. It serves as a unified platform where developers can:
+   - Developers have control over content generation, allowing them to modify AI-generated suggestions for relevance and accuracy.
 
-- Input project ideas or requirements.
-- Automatically generate detailed PRDs.
-- Extract tasks and prioritize them.
-- Convert tasks into GitHub issues with comprehensive descriptions.
-- Automate coding and deployment processes.
-- Interact with AI agents for assistance and guidance.
+   2.1.2 **Phase Document (Once a Week)**
 
+   - AI suggests breaking the PRD into specific phases, recommending timelines and dependencies.
 
+   - A phase doc requires:
 
-## 4. Target Audience
+     1. **PRD Doc**: AI takes the existing PRD and extracts the relevant parts.
+     2. **Phase Meeting Transcript**: AI captures all the fascinating conversations about timelines and dependencies, complete with those "aha!" moments.
+     3. **Custom Prompt**: The AI provides tailored prompts to make sure the phase descriptions aren’t just informative, but also entertaining (like comparing phase timelines to running a marathon—slow and steady wins the race).
 
-- **Primary Users:** Software developers seeking to optimize their workflow.
-- **Secondary Users:** Project managers and team leads looking for tools to enhance team productivity.
+   - Developers can adjust phase definitions, timelines, and dependencies to ensure they align with project priorities.
 
-## 5. Key Features and Functionality
+   2.1.3 **Issue Document (Daily)**
 
-### 5.1 Idea Input and PRD Generation(Phase 1)
+   - AI provides granular daily tasks derived from the weekly phases, helping developers manage daily activities.
 
-- **Audio Transcription:** Record meetings and convert audio to text transcripts.
-- **AI-Powered PRD Creation:** Use AI agents to generate detailed PRDs from transcripts and additional documents.
-- **Custom Prompts:** Allow optional custom prompts to guide PRD generation.
-- **Fabric Pattern Recognition:** Implement fabric patterns to identify key elements in inputs.
-- **Timeline:** 2 days timeline for PRD creation.
+   - To make an issue doc truly shine, the AI uses:
 
-### 5.2 Manual Review System
+     1. **Phase Doc**: Using the glorious phase breakdown as a guide.
+     2. **Daily Meeting Transcript**: AI transcribes daily stand-ups, capturing all those wonderful "we should do this today" moments.
+     3. **Custom Prompt**: A special prompt to help break down each task into something manageable, and perhaps sprinkled with motivational quotes to keep spirits high ("One bug at a time, my friends").
 
-- **PRD Review:** Developers can review generated PRDs, provide feedback, and request changes.
-- **PRD Verification:** Ensure PRDs meet project requirements and guidelines.
+   - Developers can refine, add, or remove tasks as needed, allowing for adaptability based on evolving project needs.
 
-### 5.3 Task Management(Phase 2)
+   2.1.4 **Branch Creation & Commit Messages**
 
-- **Task Extraction:** AI agents extract tasks from PRDs, categorize by priority or phase if not done by the AI agent it will be categorized by the developer.
-- **Task Assignment:** Assign tasks to developers with estimated time frames and priorities.
-- **Priority Setting:** Set task priorities to manage workflow effectively.
-- **Manual Review:** Developers can review tasks, provide feedback, and request changes.
--  **Timeline:** 2 days timeline for task management.
+   - AI assists in creating branches and generating commit message templates based on task descriptions.
+   - Developers retain control over the final commit message, ensuring it aligns with team standards.
 
-### 5.4 GitHub Integration(Phase 3)
+   2.1.5 **Pull Request (PR) Creation & Review**
 
-- **Issue Generation:** Convert selected tasks into GitHub issues with detailed descriptions, acceptance criteria, documentation links and details from the PRD.
-- **Automated Coding:** Utilize AI agents to write code based on GitHub issues.
-- **Manual Review** Developers can review code, provide feedback, and request changes.
-- **Deployment Automation:** Once code is approved, commit the changes to the repository.
--  **Timeline:** 2 days timeline for GitHub integration.
+   - AI suggests PR descriptions and conducts preliminary reviews by analyzing code quality and potential issues.
+   - Developers perform final reviews, making necessary adjustments and approving the PR.
 
-### 5.5 User Interface
+   2.1.6 **Testing & Closing Phases**
 
-- **Intuitive Design:** A clean, user-friendly interface built with PyQt.
-- **Customization Options:** Allow users to customize settings and preferences.
+   - AI can automate test case generation and provide insights into test coverage.
+   - Developers remain in control of test execution and approve phase closure, maintaining accountability.
 
-## 6. Technical Requirements
+   This HIL AI-based methodology ensures that developers have granular control at every step of the software development process while leveraging AI to automate routine tasks, provide recommendations, and maintain focus on conscious, value-driven development.
 
-### 6.1 Technology Stack
+    2.2 **Development Strategy**
+2.2.1 : Middle OUT:
+    Let's talk about the middle-out strategy. Imagine you're building a Ferrari—not starting with the flashy paint job (the PRD) or the fancy leather seats (the UI). Nope, we’re diving right into the roaring engine that makes the Ferrari a Ferrari. We're talking about the twin-turbo V8, the part that makes people turn their heads, the part that defines the power and experience. The idea is to focus on the core components that make everything work—simplifying the issue creation process and developing essential AI agents like the audio transcription agent. We’re not here to admire the cup holders or the infotainment system; we’re getting straight to what really matters—the engine that drives everything. Because, at the end of the day, no one's impressed by a Ferrari that looks pretty but doesn’t run.
 
-- **Programming Language:** Python
-- **GUI Framework:** PyQt
-- **AI Libraries:** Integration with AI models (e.g., OpenAI GPT models)
-- **Pattern Recognition:** Fabric library and pattern modules
-- **Version Control Integration:** GitHub API for issue management
-
-### 6.2 System Architecture
-
-- **Modular Design:** Separate components for AI agents, UI, task management, and GitHub integration.
-- **Scalability:** Design architecture to accommodate future features and increased user load.
-
-## 7. User Experience and Interface Design
-
-- **Dashboard View:** Overview of projects, tasks, and progress.
-- **Step-by-Step Workflow:** Guided process from idea input to deployment.
-- **Notifications:** Alerts for review prompts, task completions, and deployment statuses.
-- **Accessibility:** Ensure the application is accessible to users with varying needs.
-
-## 8. Workflow and Processes
-
-### 8.1 Initial Setup
-
-- User installs GitturQT and links their GitHub account.
-- Configure settings for AI agents and preferences.
-
-### 8.2 Idea to PRD
-
-- **Meeting Recording:** Record project meetings within the app or import audio files.
-- **Transcription:** Automatic conversion of audio to text.
-- **PRD Generation:** AI agent creates a PRD using the transcript, documents, and optional custom prompts.
-- **Review:** User reviews the PRD and approves or requests changes.
-
-### 8.3 Task Extraction and Management
-
-- **Task Extraction:** AI agent extracts tasks from the approved PRD.
-- **Review and Edit:** User reviews tasks, sets priorities, assigns developers, and sets deadlines.
-- **Task Confirmation:** Finalize tasks for issue generation.
-
-### 8.4 Issue Generation and Coding
-
-- **GitHub Issues:** Selected tasks are converted into detailed GitHub issues.
-- **Code Generation:** AI agents begin coding based on the issues.
-- **Review Code:** Developers review, test, and approve code before merging.
-
-### 8.5 Deployment
-
-- **Automated Deployment:** Code is deployed using predefined pipelines.
-- **Monitoring:** System monitors deployment for any issues.
-- **Feedback Loop:** Post-deployment reviews to refine future processes.
-
-## 9. Performance and Scalability
-
-- **Efficient Processing:** Optimize AI agent performance for quick PRD and task generation.
-- **Load Handling:** Ensure the app can handle multiple projects and users simultaneously.
-- **Resource Management:** Efficient use of system resources to prevent bottlenecks.
+    By starting at the midpoint, we can build outward to connect both ends of the development process. First, we nail down the critical features that will form the backbone of the project. Then, we can circle back to polish the PRD side and add a beautiful interface that makes everything shine. It’s a bit unconventional—sure—but it’s all about developing the features that make a difference, and let's be honest, who needs another meeting template when what we really need is something that works, right now!
 
 
-## 10. Deployment and Maintenance
+2.2.2 In Our Case
 
-- **Continuous Integration/Continuous Deployment (CI/CD):** Set up pipelines for regular updates.
-- **Support and Updates:** Provide regular updates and address user feedback promptly.
-- **Documentation:** Maintain comprehensive documentation for users and developers.
+In our case, the middle-out approach means starting with the most impactful features that can make developers' lives easier from the get-go. The core features to begin with are:
 
----
+- **Audio Transcription Agent**: This agent is crucial because it converts conversations, meetings, and brainstorming sessions into written records without any manual effort. Imagine not needing to scramble for notes during a meeting—just let the AI transcribe everything, making sure that no idea gets lost.
+    why: The Audio Transcription Agent is ranked first because it serves as the foundation for capturing all the valuable insights, ideas, and decisions made during discussions. Without clear, accurate notes, the rest of the process can become chaotic. This agent eliminates the burden of note-taking and ensures that no key information is lost, creating a solid basis for everything that follows.
 
-## Conclusion
+- **Phase Document Generator**: Breaking down the PRD into phases is no small task, but it’s essential for organizing the workflow. The Phase Document Generator helps structure those broad ideas into manageable sections, paving the way for easier implementation.
+- **Issue Generation Agent**: Once we have the phases, it's time to break them into daily tasks. The Issue Generation Agent takes care of this, ensuring that developers know exactly what to focus on, day by day, to keep the project moving forward.
 
-GitturQT aims to revolutionize the developer workflow by automating routine tasks and allowing developers to focus on creativity and problem-solving. By integrating AI agents, providing a seamless user experience, and ensuring robust security, GitturQT will become an essential tool in the modern developer's toolkit.
+These three components form the backbone of our middle-out development strategy. By focusing on these core agents first, we ensure that developers have a streamlined and efficient workflow. Once these core features are in place, we can expand to enhance the PRD creation, refine the UI, and add other features that will make GitturQT an even more powerful tool.
 
-We look forward to collaborating with the engineering team to bring this vision to life, addressing any challenges, and creating a product that not only meets but exceeds user expectations.
+2.2.3 
 
----
+
+
+
+
+3. **Implementation and Deployment**
+
+   The implementation and deployment of GitturQT involve careful planning to ensure seamless integration, robust functionality, and consistent availability. This section provides a comprehensive overview of the architecture, tools, and processes for setting up and deploying the GitturQT project.
+
+   3.1 **Architecture Overview**
+
+   - GitturQT follows a Model-View-Controller (MVC) architecture, ensuring a clear separation of concerns:
+     - **Model**: This layer handles all data-related logic. It represents the core business data, including PRDs, phases, issues, and user settings. It interacts with the database to fetch and save data as required.
+     - **View**: The presentation layer, which can be either a PyQT desktop interface or a web interface (final decision pending). This layer handles user interaction, providing a graphical representation of the data and capturing user inputs.
+     - **Controller**: The controller acts as an intermediary between the Model and View layers. It processes user inputs, communicates with the Model to retrieve data, and then updates the View accordingly.
+
+   3.2 **Technology Stack**
+
+   - **Backend**: Python FastAPI is used for building the backend REST APIs. FastAPI is chosen for its asynchronous capabilities, which make it highly performant for handling multiple requests, and its intuitive nature makes API development efficient.
+   - **Frontend**:
+     - **PyQT**: Providing a desktop GUI experience, ideal for developers who prefer a local, non-browser-based environment.
+     - **Web Interface**: A web-based UI using HTML, CSS, and JavaScript, which can be accessed via any browser. This option is more versatile, allowing for remote access and collaboration.
+   - **Database**: A SQL database (e.g., PostgreSQL or SQLite) will be used for persistent storage. The Model will interact with the database to store data related to PRDs, phases, issues, and user settings.
+   - **Server**: The project will be deployed on a macOS server with a static IP address, making it accessible to all team members from various locations. 
+   - **Hakuna Matata**
+
+   3.3 **Implementation Details**
+
+   - **Setting up the Environment**:
+     1. **Server Configuration**: The macOS server needs to be configured with all the required software installations, such as Python, PostgreSQL, and any other dependencies. Secure SSH access should be enabled for remote management.
+     2. **Python Virtual Environment**: Use `venv` to create a virtual environment for isolating project dependencies. This ensures there are no conflicts between different versions of libraries.
+     3. **Git Integration**: Clone the project repository onto the server using Git. Ensure that all team members have the appropriate permissions for branch creation and pushing commits.
+
+   - **Backend Development**:
+     1. **API Endpoints**: Use FastAPI to create RESTful endpoints for CRUD operations on PRDs, phases, and issues. Each endpoint should be documented clearly for ease of use by the frontend.
+     2. **Authentication**: Implement OAuth2 for user authentication to ensure that only authorized users can access and modify the project data.
+     3. **Database Schema**: Define the database schema for the different entities like PRD, phases, issues, and users. Use SQLAlchemy to interact with the database.
+
+   - **Frontend Development**:
+     1. **PyQT Interface**: If a desktop application is preferred, develop the GUI using PyQT. This interface should allow users to create, view, and update PRDs, phases, and issues in a user-friendly way.
+     2. **Web Interface**: If opting for a web interface, use a JavaScript framework like Vue.js or React for building a dynamic frontend. This UI should interact with the FastAPI backend to fetch and display data in real-time.
+
+   3.4 **Deployment Plan**
+
+   - **Deployment Steps**:
+     1. **Set Up Static IP**: Ensure that the macOS server is assigned a static IP to make it accessible from anywhere. Configure the DNS if needed for easier access.
+     2. **Reverse Proxy**: Set up a reverse proxy using Nginx or Apache to direct incoming requests to the appropriate FastAPI port, providing better security and load management.
+     3. **SSL Configuration**: Secure communication using an SSL certificate. This will encrypt all data between the client and the server, ensuring data privacy and integrity.
+     4. **Database Migration**: Use Alembic (a tool for managing SQLAlchemy database migrations) to handle database schema changes as the project evolves.
+     5. **Continuous Integration/Continuous Deployment (CI/CD)**: Set up CI/CD pipelines using GitHub Actions. Every push to the main branch should trigger automated tests, and upon passing, automatically deploy the updated code to the server.
+
+   3.5 **Maintenance and Monitoring**
+
+   - **Logging and Monitoring**: Implement logging using Python’s `logging` library to track server activity and errors. Use monitoring tools like Prometheus or Grafana to keep an eye on server health, response times, and resource utilization.
+   - **Backups**: Regular backups of the database should be scheduled to avoid data loss. These backups can be stored off-site to ensure redundancy.
+   - **Scalability**: The architecture should be scalable. In the event of increased traffic, consider scaling horizontally by adding more servers or vertically by upgrading the current server’s hardware.
+    - **API cost monitoring**:
+
+   3.6 **Decision Point: Desktop vs Web Interface**
+
+   - **PyQT Desktop GUI**: Offers a rich desktop experience with advanced GUI elements. Suitable for developers who prefer working locally.
+   - **Web Interface**: More accessible, ideal for remote teams or situations where users may need to access the tool from multiple devices.
+   - **Recommendation**: A hybrid approach could be considered where a core set of functionalities is available in both formats, allowing users to pick whichever suits their needs best.
+
+   This comprehensive implementation and deployment plan ensure that GitturQT is robust, easy to maintain, and scalable. Whether you’re a fan of sleek web interfaces or a lover of desktop GUIs, we’ve got you covered.

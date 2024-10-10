@@ -103,7 +103,7 @@ def main(prd_file_path):
     )
 
     # Step 1: Extract tasks from PRD
-    tasks_json = task_agent.run(prd_text)
+    tasks_json = task_agent.task_extraction(prd_text)
     tasks_json_clean = clean_json_string(tasks_json)
     try:
         tasks_dict = json.loads(tasks_json_clean)
@@ -127,7 +127,7 @@ def main(prd_file_path):
             task['additional_input'] = additional_input
 
     # Step 3: Generate GitHub issues from selected tasks
-    issues = issue_agent.run(selected_tasks)
+    issues = issue_agent.issue_generation(selected_tasks)
     print("\nGenerated Issues:")
     for issue in issues:
         print(issue)

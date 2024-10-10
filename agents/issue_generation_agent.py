@@ -10,7 +10,7 @@ class IssueGenerationAgent():
     """
     Agent for generating GitHub issues from task descriptions.
     """
-    def run(self, selected_tasks):
+    def issue_generation(self, selected_tasks):
         """
         Generate GitHub issues from selected tasks.
 

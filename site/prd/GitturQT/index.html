@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>GitturQT - My Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Goals and Overview</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Phases</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../phases/phase1/" class="dropdown-item">Phase1</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Prd</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">GitturQT</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../phases/phase1/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#product-requirements-document-prd-for-gitturqt" class="nav-link">Product Requirements Document (PRD) for GitturQT</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#table-of-contents" class="nav-link">Table of Contents</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1-introduction" class="nav-link">1. Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-objectives-and-goals" class="nav-link">2. Objectives and Goals</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-product-overview" class="nav-link">3. Product Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-target-audience" class="nav-link">4. Target Audience</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-key-features-and-functionality" class="nav-link">5. Key Features and Functionality</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#start-date-07-10-2024" class="nav-link">Start Date : 07-10-2024</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#end-date-11-10-2024" class="nav-link">End Date : 11-10-2024</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#pramana-vachana-conceptual-understanding-of-the-project-by-implementing-issues-portion-by-the-end-of-this-phase-i-should-be-able-to-create-issues-from-phase-1-document" class="nav-link">Pramana Vachana : Conceptual understanding of the project by implementing issues portion. By the end of this phase I should be able to create issues from phase 1 document.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#middle-out" class="nav-link">Middle Out</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#6-technical-requirements" class="nav-link">6. Technical Requirements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-user-experience-and-interface-design" class="nav-link">7. User Experience and Interface Design</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-workflow-and-processes" class="nav-link">8. Workflow and Processes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9-performance-and-scalability" class="nav-link">9. Performance and Scalability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#10-deployment-and-maintenance" class="nav-link">10. Deployment and Maintenance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#conclusion" class="nav-link">Conclusion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<hr />
+<h1 id="product-requirements-document-prd-for-gitturqt">Product Requirements Document (PRD) for GitturQT</h1>
+<p><strong>Date:</strong> [Insert Date]<br />
+<strong>Prepared by:</strong> [Your Name]</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#1-introduction">Introduction</a></li>
+<li><a href="#2-objectives-and-goals">Objectives and Goals</a></li>
+<li><a href="#3-product-overview">Product Overview</a></li>
+<li><a href="#4-target-audience">Target Audience</a></li>
+<li><a href="#5-key-features-and-functionality">Key Features and Functionality</a></li>
+<li><a href="#6-technical-requirements">Technical Requirements</a></li>
+<li><a href="#7-user-experience-and-interface-design">User Experience and Interface Design</a></li>
+<li><a href="#8-workflow-and-processes">Workflow and Processes</a></li>
+<li><a href="#9-performance-and-scalability">Performance and Scalability</a></li>
+<li><a href="#10-security-and-compliance">Security and Compliance</a></li>
+<li><a href="#11-deployment-and-maintenance">Deployment and Maintenance</a></li>
+<li><a href="#12-risks-and-mitigation-strategies">Risks and Mitigation Strategies</a></li>
+<li><a href="#13-appendices">Appendices</a></li>
+</ol>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<p>GitturQT is an innovative platform designed to streamline the developer workflow by automating the transition from ideas to deployment. By leveraging AI agents and integrating key development processes, GitturQT aims to become an indispensable tool for developers, reducing manual overhead and enhancing productivity.</p>
+<h2 id="2-objectives-and-goals">2. Objectives and Goals</h2>
+<ul>
+<li><strong>Simplify Developer Workflow:</strong> Minimize the manual tasks developers face by automating processes from idea inception to deployment.</li>
+<li><strong>End-to-End Integration:</strong> Provide a seamless experience where developers can input ideas, and the system handles PRD creation, task extraction, issue generation, coding, and deployment.</li>
+<li><strong>User-Centric Design:</strong> Ensure that developers have control with review systems at each step, allowing for manual interventions when necessary.</li>
+<li><strong>Leverage AI and Pattern Recognition:</strong> Utilize advanced AI agents and fabric patterns to interpret inputs and generate accurate outputs.</li>
+</ul>
+<h2 id="3-product-overview">3. Product Overview</h2>
+<p>GitturQT is a desktop application built with Python and PyQt. It serves as a unified platform where developers can:</p>
+<ul>
+<li>Input project ideas or requirements.</li>
+<li>Automatically generate detailed PRDs.</li>
+<li>Extract tasks and prioritize them.</li>
+<li>Convert tasks into GitHub issues with comprehensive descriptions.</li>
+<li>Automate coding and deployment processes.</li>
+<li>Interact with AI agents for assistance and guidance.</li>
+</ul>
+<h2 id="4-target-audience">4. Target Audience</h2>
+<ul>
+<li><strong>Primary Users:</strong> Software developers seeking to optimize their workflow.</li>
+<li><strong>Secondary Users:</strong> Project managers and team leads looking for tools to enhance team productivity.</li>
+</ul>
+<h2 id="5-key-features-and-functionality">5. Key Features and Functionality</h2>
+<h3 id="51-idea-input-and-prd-generationphase-1">5.1 Idea Input and PRD Generation(Phase 1)</h3>
+<h1 id="start-date-07-10-2024">Start Date : 07-10-2024</h1>
+<h1 id="end-date-11-10-2024">End Date : 11-10-2024</h1>
+<h1 id="pramana-vachana-conceptual-understanding-of-the-project-by-implementing-issues-portion-by-the-end-of-this-phase-i-should-be-able-to-create-issues-from-phase-1-document">Pramana Vachana : Conceptual understanding of the project by implementing issues portion. By the end of this phase I should be able to create issues from phase 1 document.</h1>
+<h1 id="middle-out">Middle Out</h1>
+<ul>
+<li><strong>Audio Transcription:</strong> Record meetings and convert audio to text transcripts we will be using AssemblyAI to generate the text transcripts using our hakuna matata fastapi server.</li>
+<li><strong>AI-Powered PRD Creation:</strong> Use AI agents created by us to generate detailed PRDs from transcripts and additional documents.</li>
+<li><strong>Custom Prompts:</strong> Allow optional custom prompts to guide PRD generation.</li>
+<li><strong>Fabric Pattern Recognition:</strong> Implement fabric library to recognise the  patterns to identify key elements in inputs.</li>
+<li><strong>PRD Review:</strong> Developers can review generated PRDs, provide feedback, and request changes.</li>
+<li><strong>PRD Verification:</strong> Ensure PRDs meet project requirements and guidelines.</li>
+</ul>
+<h3 id="52-task-managementphase-2">5.2 Task Management(Phase 2)</h3>
+<ul>
+<li><strong>Task Extraction:</strong> AI agents extract tasks from PRDs, categorize by priority or phase if not done by the AI agent it will be categorized by the developer in the QT app.</li>
+<li><strong>Task Assignment:</strong> Assign tasks to developers with estimated time frames and priorities(Manual review to check the time frame and priority).</li>
+<li><strong>Priority Setting:</strong> Set task priorities to manage workflow effectively(Manual review to check the priority).</li>
+<li><strong>Manual Review:</strong> Developers can review tasks, provide feedback, and request changes.</li>
+</ul>
+<h3 id="53-github-integrationphase-3">5.3 GitHub Integration(Phase 3)</h3>
+<ul>
+<li><strong>Issue Generation:</strong> Convert selected tasks into GitHub issues with detailed descriptions, acceptance criteria, documentation links and details from the PRD.</li>
+<li><strong>Automated Coding:</strong> Utilize AI agents to write code based on GitHub issues(Need to discuss this more in detail).</li>
+<li><strong>Manual Review</strong> Developers can review code, provide feedback, and request changes.</li>
+<li><strong>Deployment Automation:</strong> Once code is approved, commit the changes to the repository.</li>
+</ul>
+<h3 id="54-user-interface">5.4 User Interface</h3>
+<ul>
+<li><strong>Intuitive Design:</strong> A clean, user-friendly interface built with PyQt.</li>
+<li><strong>Customization Options:</strong> Allow users to customize settings and preferences.</li>
+</ul>
+<h2 id="6-technical-requirements">6. Technical Requirements</h2>
+<h3 id="61-technology-stack">6.1 Technology Stack</h3>
+<ul>
+<li><strong>Programming Language:</strong> Python</li>
+<li><strong>GUI Framework:</strong> PyQt</li>
+<li><strong>AI Libraries:</strong> Integration with AI models (e.g., OpenAI GPT models)</li>
+<li><strong>Pattern Recognition:</strong> Fabric library and pattern modules</li>
+<li><strong>Version Control Integration:</strong> GitHub API for issue management</li>
+</ul>
+<h3 id="62-system-architecture">6.2 System Architecture</h3>
+<ul>
+<li><strong>Modular Design:</strong> Separate components for AI agents, UI, task management, and GitHub integration.</li>
+<li><strong>Scalability:</strong> Design architecture to accommodate future features and increased user load.</li>
+</ul>
+<h2 id="7-user-experience-and-interface-design">7. User Experience and Interface Design</h2>
+<ul>
+<li><strong>Dashboard View:</strong> Overview of projects, tasks, and progress.</li>
+<li><strong>Step-by-Step Workflow:</strong> Guided process from idea input to deployment.</li>
+<li><strong>Notifications:</strong> Alerts for review prompts, task completions, and deployment statuses.</li>
+<li><strong>Accessibility:</strong> Ensure the application is accessible to users with varying needs.</li>
+</ul>
+<h2 id="8-workflow-and-processes">8. Workflow and Processes</h2>
+<h3 id="81-initial-setup">8.1 Initial Setup</h3>
+<ul>
+<li>User installs GitturQT and links their GitHub account.</li>
+<li>Configure settings for AI agents and preferences.</li>
+</ul>
+<h3 id="82-idea-to-prd">8.2 Idea to PRD</h3>
+<ul>
+<li><strong>Meeting Recording:</strong> Record project meetings within the app or import audio files.</li>
+<li><strong>Transcription:</strong> Automatic conversion of audio to text.</li>
+<li><strong>PRD Generation:</strong> AI agent creates a PRD using the transcript, documents, and optional custom prompts.</li>
+<li><strong>Review:</strong> User reviews the PRD and approves or requests changes.</li>
+</ul>
+<h3 id="83-task-extraction-and-management">8.3 Task Extraction and Management</h3>
+<ul>
+<li><strong>Task Extraction:</strong> AI agent extracts tasks from the approved PRD.</li>
+<li><strong>Review and Edit:</strong> User reviews tasks, sets priorities, assigns developers, and sets deadlines.</li>
+<li><strong>Task Confirmation:</strong> Finalize tasks for issue generation.</li>
+</ul>
+<h3 id="84-issue-generation-and-coding">8.4 Issue Generation and Coding</h3>
+<ul>
+<li><strong>GitHub Issues:</strong> Selected tasks are converted into detailed GitHub issues.</li>
+<li><strong>Code Generation:</strong> AI agents begin coding based on the issues.</li>
+<li><strong>Review Code:</strong> Developers review, test, and approve code before merging.</li>
+</ul>
+<h3 id="85-deployment">8.5 Deployment</h3>
+<ul>
+<li><strong>Automated Deployment:</strong> Code is deployed using predefined pipelines.</li>
+<li><strong>Monitoring:</strong> System monitors deployment for any issues.</li>
+<li><strong>Feedback Loop:</strong> Post-deployment reviews to refine future processes.</li>
+</ul>
+<h2 id="9-performance-and-scalability">9. Performance and Scalability</h2>
+<ul>
+<li><strong>Efficient Processing:</strong> Optimize AI agent performance for quick PRD and task generation.</li>
+<li><strong>Load Handling:</strong> Ensure the app can handle multiple projects and users simultaneously.</li>
+<li><strong>Resource Management:</strong> Efficient use of system resources to prevent bottlenecks.</li>
+</ul>
+<h2 id="10-deployment-and-maintenance">10. Deployment and Maintenance</h2>
+<ul>
+<li><strong>Continuous Integration/Continuous Deployment (CI/CD):</strong> Set up pipelines for regular updates.</li>
+<li><strong>Support and Updates:</strong> Provide regular updates and address user feedback promptly.</li>
+<li><strong>Documentation:</strong> Maintain comprehensive documentation for users and developers.</li>
+</ul>
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<p>GitturQT aims to revolutionize the developer workflow by automating routine tasks and allowing developers to focus on creativity and problem-solving. By integrating AI agents, providing a seamless user experience, and ensuring robust security, GitturQT will become an essential tool in the modern developer's toolkit.</p>
+<p>We look forward to collaborating with the engineering team to bring this vision to life, addressing any challenges, and creating a product that not only meets but exceeds user expectations.</p>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
