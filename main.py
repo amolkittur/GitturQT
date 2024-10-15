@@ -4,8 +4,15 @@ from dotenv import load_dotenv
 from agents.task_extraction_agent import TaskExtractionAgent
 from agents.issue_generation_agent import IssueGenerationAgent
 from agents.github_integration_agent import GitHubIntegrationAgent
+from agents.transcript_creation_agent import TranscriptCreationAgent
+from agents.prd_creation_agent import MeetingToPRDAgent
 
 load_dotenv()
+
+
+meeting_transcript_folder = 'docs/meeting_transcripts'
+prd_folder = 'docs/prd'
+phase_folder = 'docs/phases'
 
 def clean_json_string(json_string):
     """
@@ -83,26 +90,39 @@ def get_user_task_selection(tasks):
             continue
     return selected_tasks
 
-def main(prd_file_path):
-    """
-    Main function to run the program.
+def create_transcript():
+    transcript_agent = TranscriptCreationAgent()
+    audio_file_path = input("Enter the path to the audio file: ")
+    transcript = transcript_agent.create_transcript(audio_file_path)
+    transcript_name = input("Enter the name of the transcript file (without .md extension): ")
+    transcript_name_with_extension = f"{transcript_name}.md"
+    with open(os.path.join(meeting_transcript_folder, transcript_name_with_extension), 'w') as file:
+        file.write(transcript)
+    print(f"Transcript created and saved to {transcript_name_with_extension}")
+    return transcript, transcript_name_with_extension
 
-    Args:
-        prd_file_path (str): The path to the PRD file.
-    """
-    with open(prd_file_path, 'r') as file:
-        prd_text = file.read()
+def create_prd(transcript=None, transcript_name=None):
+    prd_agent = MeetingToPRDAgent()
+    if not transcript:
+        transcript_name = input("Enter the name of the transcript file: ")
+        transcript_name_with_extension = f"{transcript_name}.md"
+        with open(os.path.join(meeting_transcript_folder, transcript_name_with_extension), 'r') as file:
+            transcript = file.read()
+    prd_text = prd_agent.transcript_to_prd(transcript)
+    prd_name = input("Enter the name of the PRD file (without .md extension): ")
+    prd_name_with_extension = f"{prd_name}.md"
+    with open(os.path.join(prd_folder, prd_name_with_extension), 'w') as file:
+        file.write(prd_text)
+    print(f"PRD created and saved to {prd_name_with_extension}")
+    return prd_text, prd_name_with_extension
 
-    # Initialize agents
+def create_phase_list(prd_text=None, prd_name=None):
     task_agent = TaskExtractionAgent()
-    issue_agent = IssueGenerationAgent()
-    github_agent = GitHubIntegrationAgent(
-        github_token=os.getenv('GITHUB_TOKEN'),
-        repo_owner=os.getenv('REPO_OWNER'),
-        repo_name=os.getenv('REPO_NAME')
-    )
-
-    # Step 1: Extract tasks from PRD
+    if not prd_text:
+        prd_name = input("Enter the name of the PRD file (without .md extension): ")
+        prd_name_with_extension = f"{prd_name}.md"
+        with open(os.path.join(prd_folder, prd_name_with_extension), 'r') as file:
+            prd_text = file.read()
     tasks_json = task_agent.task_extraction(prd_text)
     tasks_json_clean = clean_json_string(tasks_json)
     try:
@@ -110,36 +130,45 @@ def main(prd_file_path):
         tasks = tasks_dict.get('tasks', [])
     except json.JSONDecodeError as e:
         print("Error parsing tasks JSON:", e)
-        return
-
-    # Step 2: Allow user to select tasks/subtasks
+        return None
+    phase_name = input("Enter the name for the phase list file: ")
+    with open(os.path.join(phase_folder, phase_name), 'w') as file:
+        json.dump(tasks, file, indent=2)
+    print(f"Phase list created and saved to {phase_name}")
+    
+    # Use get_user_task_selection to allow user to select tasks
     selected_tasks = get_user_task_selection(tasks)
+    return selected_tasks, phase_name
+
+def create_github_issues(selected_tasks=None, phase_name=None):
+    if not selected_tasks:
+        phase_name = input("Enter the name of the phase list file: ")
+        with open(os.path.join(phase_folder, phase_name), 'r') as file:
+            tasks = json.load(file)
+        selected_tasks = get_user_task_selection(tasks)
+    
     if not selected_tasks:
         print("No tasks selected. Exiting.")
         return
 
-    # Optional: Allow user to provide additional inputs for each selected task
-    for task in selected_tasks:
-        print(f"\nFor task: {task['task_title']}")
-        add_input = input("Do you want to provide additional transcript, document, or prompt? (yes/no): ").strip().lower()
-        if add_input in ['yes', 'y']:
-            additional_input = input("Enter additional input: ")
-            task['additional_input'] = additional_input
-
-    # Step 3: Generate GitHub issues from selected tasks
+    issue_agent = IssueGenerationAgent()
     issues = issue_agent.issue_generation(selected_tasks)
     print("\nGenerated Issues:")
     for issue in issues:
         print(issue)
         print("-" * 80)
 
-    # Ask for human input
     proceed = input("Do you approve these issues to be created on GitHub? (yes/no): ").strip().lower()
     if proceed not in ['yes', 'y']:
         print("Process terminated by user.")
         return
 
-    # Step 4: Create issues on GitHub
+    github_agent = GitHubIntegrationAgent(
+        github_token=os.getenv('GITHUB_TOKEN'),
+        repo_owner=os.getenv('REPO_OWNER'),
+        repo_name=os.getenv('REPO_NAME')
+    )
+
     for issue_content in issues:
         issue = github_agent.create_github_issue(issue_content)
         if issue:
@@ -147,5 +176,29 @@ def main(prd_file_path):
         else:
             print("Failed to create issue.")
 
+def main():
+    transcript = None
+    transcript_name = None
+    prd_text = None
+    prd_name = None
+    selected_tasks = None
+    phase_name = None
+
+    # Step 1: Create transcript
+    if input("Do you want to create a transcript from an audio file? (yes/no): ").strip().lower() in ['yes', 'y']:
+        transcript, transcript_name = create_transcript()
+
+    # Step 2: Create PRD
+    if input("Do you want to create a PRD from the transcript? (yes/no): ").strip().lower() in ['yes', 'y']:
+        prd_text, prd_name = create_prd(transcript, transcript_name)
+
+    # Step 3: Create phase list and select tasks
+    if input("Do you want to create a phase list and select tasks? (yes/no): ").strip().lower() in ['yes', 'y']:
+        selected_tasks, phase_name = create_phase_list(prd_text, prd_name)
+
+    # Step 4: Create GitHub issues
+    if input("Do you want to create GitHub issues for the selected tasks? (yes/no): ").strip().lower() in ['yes', 'y']:
+        create_github_issues(selected_tasks, phase_name)
+
 if __name__ == '__main__':
-    main('docs/prd/GitturQT.md')
+    main()

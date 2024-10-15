@@ -1,1 +1,132 @@
-site_name: My Docs
+site_name: GitturQT
+site_url: https://example.com/
+site_author: Your Name
+site_description: >-
+  GitturQT - Making the developer's life easier by integrating AI into the typical developer workflow.
+
+# Repository
+repo_name: yourusername/gitturqt
+repo_url: https://github.com/yourusername/gitturqt
+
+# Configuration
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    logo: material/git
+
+# Plugins
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: yourusername
+      repo: gitturqt
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Page tree
+nav:
+  - Home: index.md
+  - Goals and Overview:
+    - Project Purpose: project-purpose.md
+    - Methodology: methodology.md
+  - Lifecycle Phases:
+    - PRD Creation: prd-creation.md
+    - Phase Document: phase-document.md
+    - Issue Document: issue-document.md
+    - Branch Creation & Commit Messages: branch-and-commit.md
+    - Pull Request Creation & Review: pull-request.md
+    - Testing & Closing Phases: testing-and-closing.md
+  - Development Strategy:
+    - Middle-Out Approach: middle-out-approach.md
+    - Core Features: core-features.md
+  - Implementation and Deployment:
+    - Architecture Overview: architecture-overview.md
+    - Technology Stack: technology-stack.md
+    - Implementation Details: implementation-details.md
+    - Deployment Plan: deployment-plan.md
+  - Maintenance and Monitoring:
+    - Logging and Monitoring: logging-and-monitoring.md
+    - Backups: backups.md
+    - Scalability: scalability.md
+    - API Cost Monitoring: api-cost-monitoring.md
+  - Decision Points:
+    - Desktop vs Web Interface: desktop-vs-web.md
+
+# Footer
+copyright: >
+  Copyright &copy; 2023 Your Name
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
